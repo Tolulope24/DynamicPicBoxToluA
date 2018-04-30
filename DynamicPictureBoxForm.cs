@@ -19,10 +19,13 @@ namespace DynamicPicBoxToluA
         private void GeneratePictureBox()
         {
             // Generate each of the picture boxes on the form
-            GeneratePictureBox(61, 78);
-            GeneratePictureBox(464, 78);
-
+            GeneratePictureBox (61, 78);
+            GeneratePictureBox (464, 78);
+            GeneratePictureBox (61, 356);
+            GeneratePictureBox (464, 358);
         }
+
+        private
 
 
         private void frmDynamicPictureBox_Load(object sender, EventArgs e)
