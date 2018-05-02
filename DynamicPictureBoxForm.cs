@@ -18,20 +18,26 @@ namespace DynamicPicBoxToluA
             InitializeComponent();
             lblInstruction.Hide();
         }
-        
+        /*
+        * Created by:Tolu Adebayo
+        * Created on: 02-05-2018
+        * Created for: ICS3U Programming
+        * Daily Assignment – Day #32 - Dynamic Picture Box Program
+        * This program creates a Picture Box dynamically and then responds to a mouse click.
+        */
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            //
+            //cast the sender object into a picture box
             PictureBox tmpPicMan = (PictureBox)sender;
 
-            // 
+            //  declare local variables and constants
             Console.WriteLine("Picture box (" + tmpPicMan.Location.X + "," + tmpPicMan.Location.Y + ") was clicked.");
 
-            //
+            // declare local variables and constants
             const byte MAX_FRAMES = 10;
             int pictureFrameCounter = 1;
 
-            // 
+            // continue loop while the frame counter has not reached the max number of frames we have to display
             while (pictureFrameCounter < MAX_FRAMES + 1)
             {
                 if (pictureFrameCounter == 1)
@@ -85,20 +91,20 @@ namespace DynamicPicBoxToluA
 
         private void GeneratePictureBox(int x, int y)
         {
-            // dynamical
+            // dynamically generate a new picture box  and a new point at the given location
             PictureBox tmpPicMan = new PictureBox();
             Point pntPic = new System.Drawing.Point(x,y);
-            // 
+            // set the location of the picture box
             tmpPicMan.Location = pntPic;
-            //
+            // assign the image to the picture box
             tmpPicMan.Image = Properties.Resources.walk1;
-            // 
+            // stretch the image to the size of the picture pox
             tmpPicMan.SizeMode = PictureBoxSizeMode.StretchImage;
-            //
+            //make the picture box width and height to be the same as the image
             tmpPicMan.ClientSize = new Size(Properties.Resources.walk1.Width, Properties.Resources.walk1.Height);
-            //
+            //add the event listner
             tmpPicMan.Click += new System.EventHandler(PictureBox_Click);
-            //
+            //add the picture box to the form
             this.Controls.Add(tmpPicMan);
         }
 
